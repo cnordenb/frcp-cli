@@ -13,10 +13,10 @@ The program is a single C file with no dependencies beyond the standard library.
    ```
 2. From the repository root, run:
    ```
-   gcc "Fresh Random Civ Picker/main.c" -o "Fresh Random Civ Picker.exe"
+   gcc main.c -o frcp.exe
    ```
 3. Start the program:
    ```
-   & ".\Fresh Random Civ Picker.exe"
+   & ".\frcp.exe"
    ```
-   (in cmd: `"Fresh Random Civ Picker.exe"`)
+   (in cmd: `"frcp.exe"`)
