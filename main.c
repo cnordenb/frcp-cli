@@ -6,11 +6,9 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
-
 #define BUFFER_SIZE 4096
 
 bool parse_int(char *string, int *integer);
-
 char *civ_name(int index);
 int result(int);
 void resetter(int *);
@@ -19,20 +17,13 @@ int main()
 {
 	srand(time(NULL));
 	printf("Welcome to the Fresh Random Civ Picker for AoE2DE!\n\n");
-
 	int input = 0;
 	int available[45];
 	int given_index;
 	bool parsed_correct = true;
-
-	
-	
-	resetter(&available);
-	
+	resetter(available);	
 	int iterator = 0;
 	int remaining = 45;
-
-
 	do
 	{
 		do
@@ -44,20 +35,15 @@ int main()
 			parsed_correct = parse_int(buffer, &input);
 			if (!parsed_correct || input != -1 && input != 0 && input != 1) printf("\nInvalid input. Please try again.\n");
 		} while (!parsed_correct || input != -1 && input != 0 && input != 1);
-
-
-
 		if (input == -1) return 0;
 		
-
 		if (iterator == 45 || input == 0)
 		{
 			printf("\nProgram has been reset.\n");
 			iterator = 0;
-			resetter(&available);
+			resetter(available);
 			remaining = 45;
 		}
-
 		if (input == 1)
 		{
 			given_index = result(remaining);
@@ -69,14 +55,12 @@ int main()
 					break;
 				}
 				j++;
-
 			}
 			printf("\n%s (current set: %d/%d)\n", civ_name(given_index), iterator + 1, 45);			
 			available[given_index] = 0;
 			iterator++;
 			remaining--;
 		}
-
 	} while (input != -1);
 	return 0;
 }
