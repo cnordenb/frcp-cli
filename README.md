@@ -1,3 +1,8 @@
+> [!WARNING]
+> This version of frcp is no longer maintained.
+> Please go to frcp-desktop instead.  
+
+
 # Fresh Random Civ Picker
 
 ## Installation
